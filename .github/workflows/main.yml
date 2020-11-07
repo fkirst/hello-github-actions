@@ -1,0 +1,12 @@
+name: A workflow for my Hello World file
+on: push
+
+jobs: # base component of a workflow run
+  build: # the identifier attached to the job
+    name: Hello world action # name of the job
+    runs-on: ubuntu-latest
+    steps: # linear sequence of operations that make up a job
+      - uses: actions/checkout@v1 # allow the workflow to access repo contents
+      - uses: ./action-a # provide the relative path
+        with: # specify the input var to the action in the runtime environment
+          MY_NAME: "Fong"
